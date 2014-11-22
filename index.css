@@ -144,3 +144,80 @@ h2 {
   color: #6c3bf9;
   margin-left: 10px
 }
+
+@media screen and (max-width: 600px) {
+  .hero h1,
+  .hero h2 {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+    padding-right: 0;
+  }
+
+  .app-screenshot {
+    margin-top: 40px;
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+
+  .iphone-ss {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .banner {
+    margin: 0 auto;
+  }
+
+  .device-pebble {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 20px;
+  }
+
+  .banner-title,
+  .banner-message {
+    margin: 0;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .footer {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .site-resources,
+  .share {
+    float: none;
+  }
+
+  .share {
+    margin-top: 10px;
+  }
+
+  .site-resources a,
+  .share a {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .copyright {
+    display: block;
+    margin-top: 10px;
+  }
+}
