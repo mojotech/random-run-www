@@ -56,6 +56,17 @@ h2 {
   color: #ffeeee;
 }
 
+.logo-container {
+  position: relative;
+}
+
+.rr-logo-text {
+  position: absolute;
+  width: 60px;
+  left: 26px;
+  top: -2px;
+}
+
 .app-screenshot {
   position: absolute;
   top: 40px;
