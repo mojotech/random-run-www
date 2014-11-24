@@ -1,1 +1,1 @@
-### [View Site](http://mojotech.github.io/random-run-www)
+### [View Site](http://randomrunapp.com)
