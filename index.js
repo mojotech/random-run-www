@@ -11,34 +11,32 @@
   (function tick(i) {
     var x = Math.cos(i) + Math.cos(i*1.3)/xModulation;
     var y = Math.sin(i) + Math.sin(i*0.6)/yModulation;
-    pixels.unshift(new Pixel(x,y));
+    pixels.unshift([x, y, 0.9]);
 
     requestAnimationFrame(tick.bind(this, i+Math.PI/128));
   })(0)
 
-  function Pixel(x, y) {
-    this.x = x;
-    this.y = y;
-    this.opacity = 0.9;
-  }
+  function draw(arr) {
+    var x       = arr[0];
+    var y       = arr[1];
+    var opacity = arr[2];
 
-  Pixel.prototype.draw = function() {
-    if (this.opacity <= 0) {
+    if (opacity <= 0) {
       return this;
     }
 
-    ctx.clearRect(this.x*radius+xOffset, this.y*radius+yOffset, 10, 10);
-    ctx.fillStyle = "rgba(255, 255, 255," + this.opacity + ")";
+    ctx.clearRect(x*radius+xOffset, y*radius+yOffset, 10, 10);
+    ctx.fillStyle = "rgba(255, 255, 255," + opacity + ")";
 
-    ctx.fillRect(this.x*radius+xOffset, this.y*radius+yOffset, this.opacity * 10, 10 * this.opacity);
-    this.opacity -= 0.003;
+    ctx.fillRect(x*radius+xOffset, y*radius+yOffset, opacity * 10, 10 * opacity);
 
-    return this;
+    arr[2] -= 0.003;
+    return arr[2];
   };
 
   (function render() {
     pixels.forEach(function(p, i, arr) {
-      if (arr[arr.length - (i+1)].draw().opacity <= 0) {
+      if (draw(arr[arr.length - (i+1)]) <= 0) {
         arr.pop();
       }
     });
