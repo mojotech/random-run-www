@@ -9,14 +9,12 @@
   var pixels      = [];
 
   (function tick(i) {
-    setTimeout(function(i) {
-      var x = Math.cos(i) + Math.cos(i*1.3)/xModulation;
-      var y = Math.sin(i) + Math.sin(i*0.6)/yModulation;
-      pixels.push(new Pixel(x,y));
-      tick(i+Math.PI/128);
-    }.bind(this, i), 2);
-  })(0)
+    var x = Math.cos(i) + Math.cos(i*1.3)/xModulation;
+    var y = Math.sin(i) + Math.sin(i*0.6)/yModulation;
+    pixels.unshift(new Pixel(x,y));
 
+    requestAnimationFrame(tick.bind(this, i+Math.PI/128));
+  })(0)
 
   function Pixel(x, y) {
     this.x = x;
@@ -33,18 +31,18 @@
     ctx.fillStyle = "rgba(255, 255, 255," + this.opacity + ")";
 
     ctx.fillRect(this.x*radius+xOffset, this.y*radius+yOffset, this.opacity * 10, 10 * this.opacity);
-    this.opacity -= 0.005;
+    this.opacity -= 0.003;
 
     return this;
   };
 
   (function render() {
-    pixels.forEach(function(p) {
-      if (p.draw().opacity <= 0) {
-        pixels = pixels.slice(1);
+    pixels.forEach(function(p, i, arr) {
+      if (arr[arr.length - (i+1)].draw().opacity <= 0) {
+        arr.pop();
       }
     });
 
-    setTimeout(render, 20);
+    requestAnimationFrame(render);
   })();
 })();
