@@ -29,10 +29,14 @@ h2 {
   padding: 80px 40px;
 }
 
-.app-info {
+.app-info, .terms {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+}
+
+.terms {
+  padding: 80px 0;
 }
 
 .hero h1,
@@ -54,6 +58,11 @@ h2 {
   padding-bottom: 40px;
   padding-right: 50px;
   color: #ffeeee;
+}
+
+.terms h2 {
+  font-size: 22px;
+  margin: 40px 0 0 0;
 }
 
 .logo-container {
@@ -221,6 +230,10 @@ h2 {
 
   .content {
     padding: 0;
+  }
+
+  .terms {
+    padding: 40px 20px;
   }
 
   .banner {
