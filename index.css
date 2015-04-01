@@ -23,6 +23,27 @@ h2 {
   font-weight: normal;
 }
 
+.clearfix:before,
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.inner-wrap {
+  width: 800px;
+  margin: 0 auto;
+}
+
 .hero {
   background: #ff4f4f;
   color: #fff;
@@ -165,6 +186,205 @@ h2 {
   color: #6c3bf9;
 }
 
+a.mt-share-inline-square-sm img {
+  width: 34px;
+  height: auto;
+  border: 0px;
+}
+a.mt-share-inline-square-sm {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  border-radius: 2px;
+  margin-left: 4px;
+}
+.mt-twitter:hover {
+  background-color: rgb(8, 187, 255);
+}
+.mt-twitter {
+  background-color: rgb(0, 172, 238);
+}
+.mt-facebook:hover {
+  background-color: rgb(66, 100, 170);
+}
+.mt-facebook {
+  background-color: rgb(59, 89, 152);
+}
+
+/* Shared Routes */
+
+.shared-route .hero {
+  padding: 80px 0 0 0;
+  background-image: url('images/trophies.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.shared-route .hero h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.shared-route .app-info {
+  width: 280px;
+  float: left;
+}
+
+.shared-route .hero h2 {
+  padding: 0;
+  border-bottom: none;
+  max-width: 100%;
+  font-size: 18px;
+}
+
+.route-map {
+  background: #999;
+  width: 520px;
+  height: 380px;
+  float: left;
+  border-radius: 4px 4px 0 0;
+}
+
+.run-summary {
+  margin-left: 80px;
+  margin-bottom: 40px;
+  padding-right: 80px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #d1d1d1;
+}
+
+.splits {
+  padding: 0 80px;
+}
+
+.splits h3 {
+  margin-top: 0;
+}
+
+.split-list,
+.split-num,
+.split-time {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.split-num {
+  clear: both;
+  float: left;
+  margin-bottom: 20px;
+  color: #999;
+}
+
+.split-time {
+  float: right;
+  color: #6C3BF9;
+}
+
+.best-time {
+  font-weight: bold;
+}
+
+.split-time.best-time {
+  padding-left: 20px;
+  position: relative;
+}
+
+.split-time.best-time:before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  color: #FFAE00;
+}
+
+.shared-route .content {
+  padding: 80px 0 60px 0;
+  margin-bottom: 80px;
+  width: 520px;
+  background: white;
+  float: right;
+  border-radius: 0 0 4px 4px;
+}
+
+.shared-route .banner-title,
+.shared-route .banner-message {
+  width: 100%;
+  margin: 0;
+}
+
+.shared-route .footer {
+  width: 280px;
+  border: none;
+  float: left;
+  margin-top: 80px;
+  padding: 0;
+}
+
+.shared-route .site-resources {
+  margin-top: 0;
+}
+
+.shared-route .share {
+  float: none;
+  margin-bottom: 40px;
+}
+
+.shared-route a.mt-share-inline-square-sm {
+  margin-left: 0;
+}
+
+.shared-route .copyright {
+  display: block;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 960px) {
+  .inner-wrap {
+    width: 100%;
+  }
+
+  .shared-route .hero {
+    background-position: top right;
+  }
+
+  .shared-route .app-info,
+  .shared-route .route-map,
+  .shared-route .content,
+  .shared-route .footer,
+  .shared-route .share,
+  .shared-route .site-resources {
+    float: none;
+  }
+
+  .shared-route .rr-logo-text {
+    left: 50%;
+    margin-left: -26px;
+  }
+
+  .shared-route .app-info {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .route-map {
+    margin: 0 auto;
+  }
+
+  .shared-route .content {
+    margin: 0 auto;
+  }
+
+  .shared-route .footer {
+    text-align: center;
+    margin: 40px auto 80px auto;
+  }
+
+  .shared-route .site-resources a {
+    margin: 0 5px;
+  }
+}
+
 @media screen and (max-width: 850px) {
   .hero h1 {
     font-size: 40px;
@@ -269,7 +489,6 @@ h2 {
     float: none;
   }
 
-
   .site-resources {
     margin-top: 0;
   }
@@ -288,29 +507,43 @@ h2 {
     display: block;
     margin-top: 10px;
   }
-}
 
-a.mt-share-inline-square-sm img {
-  width: 34px;
-  height: auto;
-  border: 0px;
-}
-a.mt-share-inline-square-sm {
-  display: inline-block;
-  width: 34px;
-  height: 34px;
-  border-radius: 2px;
-  margin-left: 4px;
-}
-.mt-twitter:hover {
-  background-color: rgb(8, 187, 255);
-}
-.mt-twitter {
-  background-color: rgb(0, 172, 238);
-}
-.mt-facebook:hover {
-  background-color: rgb(66, 100, 170);
-}
-.mt-facebook {
-  background-color: rgb(59, 89, 152);
+  /* Shared Routes */
+
+  .shared-route .hero {
+    padding-top: 40px;
+    background-position: center;
+  }
+
+  .route-map,
+  .shared-route .content {
+    width: 100%;
+  }
+
+  .shared-route .content {
+    padding: 40px 0 20px 0;
+  }
+
+  .route-map {
+    height: 300px;
+  }
+
+  .run-summary {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-right: 40px;
+  }
+
+  .splits {
+    padding: 0 40px;
+  }
+
+  .shared-route .footer {
+    margin-bottom: 40px;
+  }
+
+  .shared-route .share {
+    margin-bottom: 20px;
+  }
 }

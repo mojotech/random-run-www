@@ -44,3 +44,59 @@
     requestAnimationFrame(render);
   })();
 })();
+
+var geocoder;
+var map;
+
+var marker;
+
+function initialize()
+{
+  var mapProp = {
+    center: new google.maps.LatLng(41.826314,-71.412145),
+    draggable: false,
+    scrollwheel: false,
+    panControl: false,
+    disableDoubleClickZoom: true,
+    disableDefaultUI:true,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  var rendererOptions = { map: map,
+    polylineOptions:{
+      strokeColor:'#6C3BF9',
+      strokeWeight: 8
+    }
+  };
+  directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+  directionsDisplay.setMap(map);
+  directionsDisplay.setOptions( { suppressMarkers: true } );
+
+  var point1 = new google.maps.LatLng(41.826314,-71.412145);
+  var point2 = new google.maps.LatLng(41.856314,-71.452145);
+  var point3 = new google.maps.LatLng(41.856314,-71.472145);
+  var point4 = new google.maps.LatLng(41.856314,-71.475643);
+
+  var wps = [{ location: point1 }, { location: point2 }, { location: point3 }, { location: point4 }];
+
+  var org = new google.maps.LatLng (41.826314,-71.412145);
+  var dest = new google.maps.LatLng (41.826314,-71.412145);
+
+  var request = {
+      origin: org,
+      destination: dest,
+      waypoints: wps,
+      travelMode: google.maps.DirectionsTravelMode.WALKING
+      };
+
+  directionsService = new google.maps.DirectionsService();
+  directionsService.route(request, function(response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(response);
+        }
+        else
+          alert ('failed to get directions');
+      });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);

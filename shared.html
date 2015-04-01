@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>RandomRun - Shared Route</title>
+
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="index.css">
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+</head>
+
+<body class="shared-route">
+
+  <div class="site-wrap">
+
+    <div class="hero">
+      <div class="inner-wrap clearfix">
+        <div class="app-info">
+          <div class="logo-container">
+            <img class="rr-logo-text" src="images/rr.svg" width="112px" height="112px" alt="Random Run - Logo" />
+            <canvas id="logo" height="224px" width="224px" style="height:112px; width:112px;">
+              <img class="rr-logo" src="images/random-run-logo.svg" width="112px" height="112px" alt="Random Run - Logo" />
+            </canvas>
+          </div>
+          <h1>RandomRun</h1>
+          <h2>Stop running in the same old circles.</h2>
+          <a class="app-store-link" href="https://itunes.apple.com/us/app/id938354170">
+            <img class="app-store-button" src="images/app-store.svg" width="135px" height="40px" alt="Download on the AppStore" />
+          </a>
+
+        </div>
+        <div id="googleMap" class="route-map"></div>
+      </div>
+    </div>
+    <div class="inner-wrap">
+      <div class="content">
+        <div class="run-summary">
+          <h2 class="banner-title">Way to go!</h2>
+          <p class="banner-message">You just completed a run of 5.85 miles. It took you 42:08, running at an average pace of 7:11 per mile.</p>
+        </div>
+        <div class="splits clearfix">
+        <h3>Splits</h3>
+        <dl class="split-list">
+          <dt class="split-num">Mile 1</dt>
+          <dd class="split-time">6:47</dd>
+          <dt class="split-num best-time">Mile 2</dt>
+          <dd class="split-time best-time">5:57</dd>
+          <dt class="split-num">Mile 3</dt>
+          <dd class="split-time">7:34</dd>
+          <dt class="split-num">Mile 4</dt>
+          <dd class="split-time">6:13</dd>
+          <dt class="split-num">Mile 5</dt>
+          <dd class="split-time">7:42</dd>
+          <dt class="split-num">.85</dt>
+          <dd class="split-time">6:51</dd>
+        </dl>
+        </div>
+      </div>
+
+      <div class="footer">
+
+        <div class="share">
+          <a class="mt-facebook mt-share-inline-square-sm" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Frandomrunapp.com%2F">
+            <img src="http://mojotech-static.s3.amazonaws.com/facebook@2x.png">
+          </a>
+          <a class="mt-twitter mt-share-inline-square-sm" href="http://twitter.com/intent/tweet?text=Stop%20running%20in%20the%20same%20old%20circles.%20Go%20for%20a%20%23randomrun&amp;url=http%3A%2F%2Frandomrunapp.com%2F">
+            <img src="http://mojotech-static.s3.amazonaws.com/twitter@2x.png">
+          </a>
+        </div>
+
+        <div class="site-resources">
+          <a href="mailto:randomrun@mojotech.com">Contact</a>
+          <a href="/terms.html">Terms of Service</a>
+          <span class="copyright">&copy; 2015 MojoTech, LLC.</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js" type="text/javascript"></script>
+</body>
+
+</html>
